@@ -1,0 +1,38 @@
+:root {
+  --ink: #1b1d19;
+  --sage: #c5d6bb;
+  --deep: #2f3a2c;
+  --mist: #e3ebdd;
+  --clay: #d6e2cf;
+  --stone: #8a8d84;
+  --bg: var(--sage);
+  --fg: var(--ink);
+  --line: 2px solid var(--ink);
+  --texture: url('/assets/concreto.png');
+  --font-sans: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-display: 'Anton', 'Haettenschweiler', Impact, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-block: 'Rubik Mono One', var(--font-mono);
+  --shadow-sm: 4px 4px 0 var(--deep);
+  --shadow: 5px 5px 0 var(--ink);
+  --shadow-lg: 8px 8px 0 var(--ink);
+  --shadow-xl: 10px 10px 0 var(--ink);
+  --dur-fast: 0.15s;
+  --dur: 0.2s;
+  --dur-slow: 0.35s;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --gutter: clamp(16px, 3vw, 40px);
+  --section-y: clamp(48px, 6vw, 96px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
