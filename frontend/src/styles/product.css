@@ -47,6 +47,7 @@
   aspect-ratio: 1 / 1;
   background: var(--clay);
   border: var(--line);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   overflow: hidden;
 }
@@ -77,6 +78,7 @@
   padding: 0;
   background: var(--clay);
   border: var(--line);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   outline-offset: 2px;
   transition: transform var(--dur-fast);
@@ -156,6 +158,8 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border: var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
   font-family: var(--font-mono);
   font-size: 11px;
   text-transform: uppercase;
@@ -214,6 +218,8 @@
 .related-card {
   background: var(--clay);
   border: var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition:

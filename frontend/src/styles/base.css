@@ -79,3 +79,36 @@ ul {
   background: var(--bg) var(--texture) repeat;
   background-size: 430px auto;
 }
+
+.page {
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--bg);
+}
+
+.tone-sage {
+  background: var(--sage);
+}
+
+.tone-mist {
+  background: var(--mist);
+}
+
+.tone-clay {
+  background: var(--clay);
+}
+
+.tone-cream {
+  background: #eef1e6;
+}
+
+.tone-ink {
+  background: var(--ink);
+  color: var(--mist);
+}
+
+.tone-tex {
+  background-image: var(--texture);
+  background-size: 430px auto;
+  background-blend-mode: multiply;
+}

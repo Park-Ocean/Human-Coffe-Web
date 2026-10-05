@@ -14,16 +14,21 @@
   --font-display: 'Anton', 'Haettenschweiler', Impact, sans-serif;
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-block: 'Rubik Mono One', var(--font-mono);
-  --shadow-sm: 4px 4px 0 var(--deep);
-  --shadow: 5px 5px 0 var(--ink);
-  --shadow-lg: 8px 8px 0 var(--ink);
-  --shadow-xl: 10px 10px 0 var(--ink);
+  --radius-sm: 12px;
+  --radius: 22px;
+  --radius-lg: 32px;
+  --blob: 42% 58% 63% 37% / 55% 40% 60% 45%;
+  --shadow-sm: 0 10px 24px -16px rgb(27 29 25 / 0.45);
+  --shadow: 0 18px 40px -22px rgb(27 29 25 / 0.5);
+  --shadow-lg: 0 28px 60px -28px rgb(27 29 25 / 0.55);
+  --shadow-xl: 0 40px 80px -34px rgb(27 29 25 / 0.6);
   --dur-fast: 0.15s;
   --dur: 0.2s;
   --dur-slow: 0.35s;
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --gutter: clamp(16px, 3vw, 40px);
   --section-y: clamp(48px, 6vw, 96px);
+  --header-h: 84px;
 }
 
 @media (prefers-reduced-motion: reduce) {

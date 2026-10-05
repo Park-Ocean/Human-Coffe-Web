@@ -10,7 +10,7 @@ export const CATALOG_FILTERS: { key: CatalogFilter; label: string }[] = [
 
 export const SITE = {
   name: 'Human Coffe',
-  email: 'hola@humancoffe.cl',
+  email: 'human.coffe.cl@gmail.com',
   tagline: 'Implementos para café de especialidad — Chile',
   promise: 'No vendemos café. Vendemos con qué hacerlo bien.',
 } as const
@@ -25,7 +25,6 @@ export const NAV: NavItem[] = [
   { label: 'Máquinas', to: '/#catalogo' },
   { label: 'Accesorios', to: '/#categorias' },
   { label: 'Compara', to: '/#compara' },
-  { label: 'Guías', to: '/#guias' },
   { label: 'Contacto', to: '/#contacto' },
 ]
 
@@ -33,8 +32,104 @@ export const PDP_NAV: NavItem[] = [
   { label: 'Molinos', to: '/#catalogo' },
   { label: 'Máquinas', to: '/#catalogo' },
   { label: 'Compara', to: '/#compara' },
-  { label: 'Guías', to: '/#guias' },
 ]
+
+export type MegaLink = { label: string; to: string }
+export type MegaColumn = { heading: string; links: MegaLink[] }
+export type MegaMenu = {
+  label: string
+  to: string
+  columns: MegaColumn[]
+  feature: { img: string; title: string; text: string }
+}
+
+export const MEGA: MegaMenu[] = [
+  {
+    label: 'Molinos',
+    to: '/#catalogo',
+    columns: [
+      {
+        heading: 'Por uso',
+        links: [
+          { label: 'Espresso', to: '/#catalogo' },
+          { label: 'Filtro', to: '/#catalogo' },
+          { label: 'Manuales', to: '/#catalogo' },
+        ],
+      },
+      {
+        heading: 'Por fresa',
+        links: [
+          { label: 'Planas 54 mm', to: '/#catalogo' },
+          { label: 'Planas 64 mm', to: '/#catalogo' },
+          { label: 'Cónicas', to: '/#catalogo' },
+        ],
+      },
+    ],
+    feature: {
+      img: '/assets/tostador.png',
+      title: 'Single dose',
+      text: 'Retención casi nula y ajuste sin pasos para pesar cada dosis.',
+    },
+  },
+  {
+    label: 'Máquinas',
+    to: '/#catalogo',
+    columns: [
+      {
+        heading: 'Por sistema',
+        links: [
+          { label: 'Espresso', to: '/#catalogo' },
+          { label: 'Superautomáticas', to: '/#catalogo' },
+        ],
+      },
+      {
+        heading: 'Por caldera',
+        links: [
+          { label: 'Termobloque', to: '/#catalogo' },
+          { label: 'Doble caldera', to: '/#catalogo' },
+        ],
+      },
+    ],
+    feature: {
+      img: '/assets/interior.png',
+      title: 'Control PID',
+      text: 'Temperatura estable para extraer y vaporizar sin tiempos muertos.',
+    },
+  },
+  {
+    label: 'Accesorios',
+    to: '/#categorias',
+    columns: [
+      {
+        heading: 'Preparación',
+        links: [
+          { label: 'Tampers', to: '/#categorias' },
+          { label: 'WDT', to: '/#categorias' },
+          { label: 'Balanzas', to: '/#categorias' },
+        ],
+      },
+      {
+        heading: 'Servicio',
+        links: [
+          { label: 'Filtros', to: '/#categorias' },
+          { label: 'Termos', to: '/#categorias' },
+          { label: 'Tazas', to: '/#categorias' },
+        ],
+      },
+    ],
+    feature: {
+      img: '/assets/granos.png',
+      title: 'Afina el ritual',
+      text: 'Los detalles chicos que separan un shot correcto de uno memorable.',
+    },
+  },
+]
+
+export const VIDEOS = {
+  hero: 'https://videos.pexels.com/video-files/19428460/19428460-hd_1920_1080_24fps.mp4',
+  reveal: 'https://videos.pexels.com/video-files/19428460/19428460-hd_1920_1080_24fps.mp4',
+  poster: '/assets/interior.png',
+} as const
 
 export const HERO = {
   eyebrow: 'Café de especialidad · Equipamiento · Chile',
@@ -46,7 +141,7 @@ export const HERO = {
   sub: 'Molinos, máquinas y accesorios para hacer espresso en casa. No vendemos café: vendemos con qué hacerlo bien.',
   cta: { label: 'Comprar ahora', to: '/#catalogo' },
   ctaAlt: { label: 'Cómo elegir', to: '/#empezar' },
-  video: '',
+  video: VIDEOS.hero,
   poster: '/assets/interior.png',
   ticker: ['Single dose', 'Fresas planas', 'Control PID', 'Doble caldera', 'Versión 220 V', 'Envío a todo Chile'],
 } as const
@@ -125,9 +220,11 @@ export const VALUES: Value[] = [
 export const SHOWROOM = {
   title: 'Atención 1 a 1',
   text: 'Cuéntanos qué buscas y armamos una recomendación a tu medida. Coordinamos envío, retiro o una demo antes de comprar.',
+  manifesto:
+    'Creemos que el café de especialidad es, ante todo, un café más humano: hecho con tiempo, cuidado y las herramientas correctas.',
   rows: [
     ['WhatsApp', '+56 9 1234 5678'],
-    ['Correo', 'hola@humancoffe.cl'],
+    ['Correo', 'human.coffe.cl@gmail.com'],
     ['Showroom', 'Providencia, Santiago'],
     ['Horario', 'Lun a Vie · 10:00–18:00'],
   ] as const,
@@ -145,70 +242,6 @@ export const PERKS: Perk[] = [
   { n: '02', title: 'Garantía 12 meses', desc: 'Servicio técnico local', color: '#8A8D84' },
   { n: '03', title: '6 cuotas sin interés', desc: 'Webpay · Mercado Pago', color: '#2F3A2C' },
   { n: '04', title: 'Asesoría experta', desc: 'Te ayudamos a elegir', color: '#D6E2CF' },
-]
-
-export type Guide = {
-  title: string
-  tag: string
-  time: string
-  img: string
-}
-
-export const GUIDES: Guide[] = [
-  {
-    title: 'Single dosing: por qué pesar cada dosis',
-    tag: 'Molinos',
-    time: '6 min',
-    img: '/assets/granos.png',
-  },
-  {
-    title: 'Tu primer shot: 18 g in, 36 g out',
-    tag: 'Espresso',
-    time: '8 min',
-    img: '/assets/origen.png',
-  },
-  {
-    title: 'Cómo limpiar tu molino plano',
-    tag: 'Mantención',
-    time: '5 min',
-    img: '/assets/tostador.png',
-  },
-]
-
-export type Review = {
-  quote: string
-  who: string
-  product: string
-  color: string
-  font: 'sans' | 'serif'
-  size: string
-}
-
-export const REVIEWS: Review[] = [
-  {
-    quote: 'El DF54 llegó listo para usar y la retención es prácticamente cero.',
-    who: 'Cliente — Santiago',
-    product: 'DF54',
-    color: '#D6E2CF',
-    font: 'sans',
-    size: '24px',
-  },
-  {
-    quote: 'Por el precio, la H10B da un control de temperatura que no esperaba.',
-    who: 'Cliente — Valparaíso',
-    product: 'H10B',
-    color: '#E3EBDD',
-    font: 'serif',
-    size: '32px',
-  },
-  {
-    quote: 'Me asesoraron para elegir entre DF54 y DF64. Cero vueltas.',
-    who: 'Cliente — Concepción',
-    product: 'DF64',
-    color: '#D6E2CF',
-    font: 'sans',
-    size: '24px',
-  },
 ]
 
 export type Faq = {
@@ -315,6 +348,34 @@ export const BRANDS_MARQUEE = [
 ]
 
 export const TRUST_BADGES = ['Despacho 24–72 h', 'Garantía 12 meses', 'Versión 220 V']
+
+export type SocialId = 'instagram' | 'tiktok' | 'facebook' | 'whatsapp'
+
+export type Social = {
+  id: SocialId
+  label: string
+  href: string
+}
+
+export const SOCIAL: Social[] = [
+  { id: 'instagram', label: 'Instagram', href: '' },
+  { id: 'tiktok', label: 'TikTok', href: '' },
+  { id: 'facebook', label: 'Facebook', href: '' },
+  { id: 'whatsapp', label: 'WhatsApp', href: 'https://wa.me/56912345678' },
+]
+
+export const FOOTER_TICKER = [
+  'Armá tu ritual',
+  '✶',
+  'Herramientas honestas',
+  '✶',
+  'Molinos espresso',
+  '✶',
+  'Despacho a todo Chile',
+  '✶',
+  'Servicio técnico local',
+  '✶',
+]
 
 export const SHIPPING_ROWS: readonly (readonly [string, string])[] = [
   ['Santiago', '24–48 h hábiles'],

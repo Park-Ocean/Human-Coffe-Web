@@ -6,6 +6,7 @@ export function Showroom() {
       <div className="showroom__info">
         <h2 className="showroom__title">{SHOWROOM.title}</h2>
         <p className="showroom__text">{SHOWROOM.text}</p>
+        <p className="showroom__manifesto">{SHOWROOM.manifesto}</p>
 
         <dl className="showroom__rows">
           {SHOWROOM.rows.map(([key, value]) => (
@@ -21,9 +22,8 @@ export function Showroom() {
         </a>
       </div>
 
-      <div className="showroom__map" aria-hidden="true">
-        <span className="showroom__pin" />
-        <span className="showroom__map-label">Providencia · Santiago</span>
+      <div className="showroom__media">
+        <img src="/assets/interior.png" alt="Equipos de café en el showroom Human Coffe" loading="lazy" />
       </div>
     </section>
   )
