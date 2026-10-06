@@ -112,94 +112,97 @@
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
 }
 
-.header__icon,
-.header__burger {
-  width: 42px;
-  height: 42px;
-  display: grid;
+.header__icon {
+  position: relative;
+  display: inline-grid;
   place-items: center;
-  border: 2px solid currentColor;
+  width: 40px;
+  height: 40px;
+  border: 0;
   border-radius: 999px;
   background: transparent;
   color: inherit;
   cursor: pointer;
-  font-size: 18px;
   transition:
-    transform var(--dur-fast),
-    background var(--dur);
+    background var(--dur),
+    transform var(--dur-fast) var(--ease-out);
 }
 
 .header__icon:hover {
-  transform: translateY(-2px);
+  background: color-mix(in srgb, currentColor 12%, transparent);
 }
 
-.header__burger {
-  display: none;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  gap: 5px;
+.header__icon:active {
+  transform: scale(0.92);
 }
 
-.header__burger span {
+.header__icon:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.header__icon svg {
   display: block;
-  width: 18px;
-  height: 2px;
-  background: currentColor;
-  transition: transform var(--dur);
+  width: 22px;
+  height: 22px;
 }
 
-.header[data-menu='true'] .header__burger span:first-child {
-  transform: translateY(3.5px) rotate(45deg);
+.header__icon--account {
+  display: none;
 }
 
-.header[data-menu='true'] .header__burger span:last-child {
-  transform: translateY(-3.5px) rotate(-45deg);
+.header__icon--menu {
+  display: none;
 }
 
-.header__cart {
+@media (min-width: 941px) {
+  .header__icon--account {
+    display: inline-grid;
+  }
+}
+
+.header__count {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  border: 2px solid currentColor;
+  justify-content: center;
   border-radius: 999px;
-  background: transparent;
-  color: inherit;
-  padding: 10px 16px;
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  transition:
-    transform var(--dur-fast),
-    background var(--dur),
-    color var(--dur);
-}
-
-.header__cart:hover {
-  transform: translateY(-2px);
-}
-
-.header[data-solid='true'] .header__cart {
-  background: var(--ink);
-  color: var(--sage);
-  border-color: var(--ink);
-}
-
-.header__cart b {
-  display: grid;
-  place-items: center;
-  min-width: 22px;
-  height: 22px;
-  padding: 0 5px;
   background: var(--mist);
   color: var(--ink);
-  border-radius: 999px;
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1;
+}
+
+.icon-menu__top,
+.icon-menu__mid,
+.icon-menu__bot {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform var(--dur) var(--ease-out),
+    opacity var(--dur) var(--ease-out);
+}
+
+.header[data-menu='true'] .icon-menu__top {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.header[data-menu='true'] .icon-menu__bot {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+.header[data-menu='true'] .icon-menu__mid {
+  opacity: 0;
+  transform: scaleX(0.4);
 }
 
 /* Mega menú ---------------------------------------------------------------- */
@@ -303,16 +306,8 @@
     display: none;
   }
 
-  .header__icon {
-    display: none;
-  }
-
-  .header__burger {
-    display: flex;
-  }
-
-  .header__cart-label {
-    display: none;
+  .header__icon--menu {
+    display: inline-grid;
   }
 
   .header__brand {

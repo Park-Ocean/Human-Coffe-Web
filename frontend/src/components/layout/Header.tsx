@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../../context/cartContext'
 import { MEGA } from '../../data/site'
 import type { NavItem } from '../../data/site'
+import { IconAccount, IconBag, IconMenu, IconSearch } from '../ui/Icons'
 
 type HeaderProps = {
   nav: NavItem[]
@@ -13,7 +14,7 @@ type HeaderProps = {
 
 export function Header({
   nav,
-  showSearch = false,
+  showSearch = true,
   interactiveCart = true,
   overlay = false,
 }: HeaderProps) {
@@ -89,37 +90,53 @@ export function Header({
 
         <div className="header__actions">
           {showSearch && (
-            <button type="button" className="header__icon" aria-label="Buscar">
-              ⌕
+            <button
+              type="button"
+              className="header__icon header__icon--search"
+              aria-label="Buscar"
+            >
+              <IconSearch />
             </button>
           )}
+
+          <button
+            type="button"
+            className="header__icon header__icon--account"
+            aria-label="Iniciar sesión"
+          >
+            <IconAccount />
+          </button>
 
           {interactiveCart ? (
             <button
               type="button"
-              className="header__cart"
+              className="header__icon header__icon--cart"
               onClick={cart.toggle}
+              aria-label={`Carrito, ${cart.count} artículos`}
               aria-expanded={cart.isOpen}
             >
-              <span className="header__cart-label">Carro</span>
-              <b>{cart.count}</b>
+              <IconBag />
+              {cart.count > 0 && <span className="header__count">{cart.count}</span>}
             </button>
           ) : (
-            <Link className="header__cart" to="/#catalogo">
-              <span className="header__cart-label">Carro</span>
-              <b>{cart.count}</b>
+            <Link
+              className="header__icon header__icon--cart"
+              to="/#catalogo"
+              aria-label={`Carrito, ${cart.count} artículos`}
+            >
+              <IconBag />
+              {cart.count > 0 && <span className="header__count">{cart.count}</span>}
             </Link>
           )}
 
           <button
             type="button"
-            className="header__burger"
+            className="header__icon header__icon--menu"
             aria-label={menu ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menu}
             onClick={() => setMenu((m) => !m)}
           >
-            <span />
-            <span />
+            <IconMenu />
           </button>
         </div>
       </div>
