@@ -11,13 +11,13 @@ const ITEMS: Item[] = [
   {
     title: 'Molinos',
     note: 'Single dose · fresas planas',
-    img: '/assets/tostador.png',
+    img: '/assets/col-molinos.jpg',
     to: '/#catalogo',
   },
   {
     title: 'Máquinas y accesorios',
     note: 'Espresso PID · preparación',
-    img: '/assets/interior.png',
+    img: '/assets/col-maquinas.jpg',
     to: '/#catalogo',
   },
 ]

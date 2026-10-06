@@ -30,8 +30,6 @@ export type Product = {
 
 const TURIN = 'https://www.turingrinders.com/cdn/shop/files/'
 const HIBREW = 'https://www.hibrew.com/cdn/shop/files/'
-const MIELUX =
-  'https://omo-oss-image1.thefastimg.com/portal-saas/pg2025111018300981385/cms/image/206acb26-2192-4b93-82cb-7d5e0cd0fbdf.jpg?vf=B7gH3s'
 
 export const PRODUCTS: Product[] = [
   {
@@ -43,15 +41,11 @@ export const PRODUCTS: Product[] = [
     category: 'g',
     sub: 'Plano 54 mm · single dose · ajuste sin pasos',
     desc: 'Molino single dose de fresas planas de 54 mm. Ajuste sin pasos, retención casi nula y tamaño compacto que cabe bajo cualquier mueble de cocina.',
-    price: 289990,
+    price: 300000,
     reviews: 212,
     tag: 'Más vendido',
     tagColor: '#E3EBDD',
-    images: [
-      TURIN + 'DF54_White_1_1024x1024@2x.jpg?v=1737056050',
-      TURIN + 'DF54_4_5cfe09f7-3a3f-40f3-a598-a3be601845b8_1024x1024@2x.jpg?v=1737056050',
-      TURIN + 'DF54_White_2_1024x1024@2x.jpg?v=1737056050',
-    ],
+    images: ['/assets/df54-negro.png', '/assets/df54-negro-2.png', '/assets/df54-negro-3.png'],
     colors: [
       { name: 'Blanco', hex: '#C5D6BB' },
       { name: 'Negro', hex: '#1B1D19' },
@@ -120,7 +114,7 @@ export const PRODUCTS: Product[] = [
     reviews: 38,
     tag: 'Nuevo',
     tagColor: '#8A8D84',
-    images: [MIELUX],
+    images: ['/assets/em3801-negro.jpg'],
     colors: [{ name: 'Acero', hex: '#C9C9C4' }],
     specs: [
       ['Calentamiento', 'Doble caldera'],
@@ -192,12 +186,12 @@ export const RELATED: Record<ProductId, ProductId[]> = {
 }
 export const SETUP = {
   ids: ['df54', 'h10b'] as const,
-  discount: 0.08,
+  full: 500000,
+  price: 460000,
   title: 'Setup de inicio:',
   text: 'Molino plano de 54 mm y máquina con PID. La combinación más simple para pasar del café de cápsula al espresso real.',
 }
 
 export function setupTotals(): { full: number; price: number } {
-  const full = SETUP.ids.reduce((acc, id) => acc + BY_ID.get(id)!.price, 0)
-  return { full, price: Math.round((full * (1 - SETUP.discount)) / 10) * 10 }
+  return { full: SETUP.full, price: SETUP.price }
 }

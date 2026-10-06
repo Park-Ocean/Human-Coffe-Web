@@ -66,7 +66,7 @@ export const MEGA: MegaMenu[] = [
       },
     ],
     feature: {
-      img: '/assets/tostador.png',
+      img: '/assets/cat-molinos.jpg',
       title: 'Single dose',
       text: 'Retención casi nula y ajuste sin pasos para pesar cada dosis.',
     },
@@ -91,7 +91,7 @@ export const MEGA: MegaMenu[] = [
       },
     ],
     feature: {
-      img: '/assets/interior.png',
+      img: '/assets/cat-maquinas.jpg',
       title: 'Control PID',
       text: 'Temperatura estable para extraer y vaporizar sin tiempos muertos.',
     },
@@ -118,7 +118,7 @@ export const MEGA: MegaMenu[] = [
       },
     ],
     feature: {
-      img: '/assets/granos.png',
+      img: '/assets/cat-accesorios.jpg',
       title: 'Afina el ritual',
       text: 'Los detalles chicos que separan un shot correcto de uno memorable.',
     },
@@ -138,7 +138,7 @@ export const HERO = {
     { text: 'Tus reglas.', style: 'outline' },
     { text: 'Nuestras herramientas.', style: 'solid' },
   ],
-  sub: 'Molinos, máquinas y accesorios para hacer espresso en casa. No vendemos café: vendemos con qué hacerlo bien.',
+  sub: 'Molinos, máquinas y accesorios para café de especialidad. Rigor técnico para prepararlo como corresponde, del espresso al filtro. No vendemos café: vendemos con qué hacerlo bien.',
   cta: { label: 'Comprar ahora', to: '/#catalogo' },
   ctaAlt: { label: 'Cómo elegir', to: '/#empezar' },
   video: VIDEOS.hero,
@@ -156,19 +156,19 @@ export type EditorialBlock = {
 export const EDITORIAL: EditorialBlock[] = [
   {
     n: '01',
-    img: '/assets/granos.png',
+    img: '/assets/editorial-molino.jpg',
     title: 'Empieza por el molino',
     text: 'El molino define más el sabor que la máquina. Fresas planas, retención baja y ajuste fino desde el primer día.',
   },
   {
     n: '02',
-    img: '/assets/tostador.png',
+    img: '/assets/editorial-maquina.jpg',
     title: 'Suma la máquina',
     text: 'Doble caldera y control PID para extraer y vaporizar sin tiempos muertos ni adivinar la temperatura.',
   },
   {
     n: '03',
-    img: '/assets/origen.png',
+    img: '/assets/editorial-ritual.jpg',
     title: 'Afina el ritual',
     text: 'Balanzas, tamper y WDT. Los detalles chicos que separan un shot correcto de uno memorable.',
   },

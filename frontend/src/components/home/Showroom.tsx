@@ -23,7 +23,7 @@ export function Showroom() {
       </div>
 
       <div className="showroom__media">
-        <img src="/assets/interior.png" alt="Equipos de café en el showroom Human Coffe" loading="lazy" />
+        <img src="/assets/showroom-1a1.jpg" alt="Asesoría 1 a 1 en Human Coffe" loading="lazy" />
       </div>
     </section>
   )

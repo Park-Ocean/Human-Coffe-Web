@@ -16,7 +16,7 @@ const CARDS: Card[] = [
     wordClass: 'cat-card__word--serif',
     count: 'A / 02 modelos',
     note: 'Fresas planas · single dose',
-    img: '/assets/tostador.png',
+    img: '/assets/cat-molinos.jpg',
     filter: 'g',
   },
   {
@@ -24,7 +24,7 @@ const CARDS: Card[] = [
     wordClass: 'cat-card__word--block',
     count: 'B / 02 modelos',
     note: 'Espresso con control PID',
-    img: '/assets/interior.png',
+    img: '/assets/cat-maquinas.jpg',
     filter: 'm',
   },
   {
@@ -32,7 +32,7 @@ const CARDS: Card[] = [
     wordClass: 'cat-card__word--heavy',
     count: 'C / Próximamente',
     note: 'Tampers · balanzas · WDT',
-    img: '/assets/concreto.png',
+    img: '/assets/cat-accesorios.jpg',
   },
 ]
 

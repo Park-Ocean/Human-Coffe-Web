@@ -31,11 +31,13 @@ export function SetupPack() {
         <div className="spotlight__price">
           <s>{clp(full)}</s>
           <b>{clp(price)}</b>
+          <span className="spotlight__save-note">Ahorras {clp(full - price)}</span>
         </div>
 
-        <button type="button" className="btn btn--lg" onClick={() => cart.add([...SETUP.ids])}>
-          Agregar pack →
+        <button type="button" className="btn btn--lg spotlight__cta" onClick={() => cart.add([...SETUP.ids])}>
+          Añadir el pack al carrito →
         </button>
+        <span className="spotlight__reassure">Envío gratis · 6 cuotas sin interés</span>
       </div>
     </section>
   )

@@ -38,13 +38,27 @@ export function Compare() {
           </Link>
         </div>
 
-        {set.rows.map((r) => (
-          <div className="compare__row" key={r.key}>
-            <span className="compare__key">{r.key}</span>
-            <span className="compare__cell">{r.a}</span>
-            <span className="compare__cell">{r.b}</span>
-          </div>
-        ))}
+        {set.rows.map((r) => {
+          const diff = r.a !== r.b
+
+          return (
+            <div
+              className={`compare__row${diff ? ' compare__row--diff' : ''}`}
+              key={r.key}
+            >
+              <span className="compare__key">
+                {r.key}
+                {diff && (
+                  <i className="compare__flag" aria-label="Difieren entre sí">
+                    dif
+                  </i>
+                )}
+              </span>
+              <span className="compare__cell">{r.a}</span>
+              <span className="compare__cell">{r.b}</span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

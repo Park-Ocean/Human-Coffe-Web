@@ -63,7 +63,7 @@
 .header__brand img {
   height: 44px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: grayscale(1) invert(1);
   transition: filter var(--dur-slow) var(--ease-out);
 }
 
@@ -246,6 +246,11 @@
   border: 2px solid var(--ink);
   border-radius: var(--radius);
   filter: grayscale(1) contrast(1.08);
+  transition: filter var(--dur-slow) var(--ease-out);
+}
+
+.mega__feature:hover img {
+  filter: grayscale(0) contrast(1);
 }
 
 .mega__feature b {
